@@ -46,12 +46,12 @@ export default function LinkedInGenerator() {
     setLoading(true);
     setLoadingStepIndex(0);
     try {
-      const res = await fetch("http://127.0.0.1:8000/generate", {
+      const res = await fetch("https://ai-post-generator-bxpl.onrender.com/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ description: form.desc, brief: form.brief, tone: form.tone }),
       });
-      
+      //
       if (!res.ok) throw new Error("Erreur serveur");
       
       const data = await res.json();
